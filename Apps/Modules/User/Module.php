@@ -1,6 +1,6 @@
 <?php
 
-namespace Erp\Goods;
+namespace Erp\User;
 
 class Module
 {
@@ -11,8 +11,10 @@ class Module
 		$loader = new \Phalcon\Loader();
 
 		$loader->registerNamespaces(array(
-			'Erp\Goods\Controllers' => './apps/modules/goods/controllers/',
-            'Erp\Goods\Models' => './apps/modules/goods/models/'
+			'Erp\User\Controllers' => './Apps/Modules/User/Controllers/',
+            'Erp\User\Models' => './Apps/Modules/User/Models/',
+            'Erp\Common' => './Apps/Common/',
+            'Erp\Libs' => './Apps/Libs/',
         ));
 
 		$loader->register();
@@ -27,7 +29,7 @@ class Module
 		//Registering a dispatcher
 		$di->set('dispatcher', function() {
 			$dispatcher = new \Phalcon\Mvc\Dispatcher();
-			$dispatcher->setDefaultNamespace("Erp\Goods\Controllers\\");
+			$dispatcher->setDefaultNamespace("Erp\User\Controllers\\");
 			return $dispatcher;
 		});
 
