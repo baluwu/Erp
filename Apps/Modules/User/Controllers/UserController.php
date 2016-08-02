@@ -6,10 +6,10 @@ use Erp\Common as Common;
 
 class UserController extends \Phalcon\Mvc\Controller {
     public function addAction($user_id, $uname) {
-        $r = Meta\User::find();
+        $r = (new Meta\User)->getList();
 
         foreach ($r as $v) {
-           echo $v->User . '-' .  $v->Host . '-' . $v->Password . '-' . $v->Select_priv . '<BR />';
+           print_r($v);
         }
     }
 

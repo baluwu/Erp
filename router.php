@@ -15,12 +15,12 @@ $di->set('router', function(){
 
 	$router->setDefaultModule("user");
 
-	$router->add('/:module/:controller/:action/:params', array(
+	$router->add('/:module/:controller/:action/:params', [
 		'module' => 1,
 		'controller' => 2,
         'action' => 3,
         'params' => 4
-	));
+	]);
 
     return $router;
 });
@@ -36,11 +36,15 @@ $application = new Application($di);
 $application->registerModules(array(
 	'user' => array(
 		'className' => 'Erp\User\Module',
-		'path' => './apps/modules/user/Module.php'
+		'path' => './Apps/Modules/User/Module.php'
 	),
 	'goods' => array(
 		'className' => 'Erp\Goods\Module',
-		'path' => './apps/modules/goods/Module.php'
+		'path' => './Apps/Modules/Goods/Module.php'
+    ),
+    'order' => array(
+		'className' => 'Erp\Order\Module',
+		'path' => './Apps/Modules/Order/Module.php'
 	)
 ));
 

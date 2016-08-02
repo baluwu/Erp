@@ -7,14 +7,17 @@ return [
         'host'        => 'localhost',
         'username'    => 'root',
         'password'    => 'aaaaaa',
-        'dbname'      => 'erp'
+        'dbname'      => 'erp',
+        'charset'     => 'utf8'
     ],
     
-    'db1' => [
+    'biz1' => [
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => 'aaaaaa'
+        'password'    => 'aaaaaa',
+        'dbname'      => 'biz1',
+        'charset'     => 'utf8'
     ]
 
 ];
