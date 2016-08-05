@@ -1,18 +1,15 @@
 <?php
+include './defines.php';
 
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\DI\FactoryDefault;
 
-include './defines.php';
-
 $di = new FactoryDefault();
 
 $di->set('router', function(){
-
 	$router = new Router();
-
 	$router->setDefaultModule("user");
 
 	$router->add('/:module/:controller/:action/:params', [
@@ -49,3 +46,5 @@ $application->registerModules(array(
 ));
 
 echo $application->handle()->getContent();
+
+include 'finish.php';
